@@ -3,9 +3,11 @@
 === Author: Jesse Day
 ================================
 
+This is an experimental project and very much work in progress!  It is not ready or currently intended for use on a production site.
+
 About
 -----
-This plugin is intended to provide very simple content management.  It allows for the creation of blog content pages with the assistance of an HTML editor.
+This plugin is intended to provide very simple blog management.  It allows for the creation of blog content pages with the assistance of an HTML editor.
 
 License
 -------
@@ -28,9 +30,3 @@ To install the plugin:
 Configuration
 ------------
 New pages can be added/edited/deleted through the Plugin Management interface.
-
-The PATH chosen for each page determines where the page is later accessed.  To direct users to blog content created with this plugin, place links to http://www.../pages/view/%PATH%, where %PATH% is a value you choose.
-
-Contact/Support
----------------
-Please email the authors for support, bugfixes, or comments.
