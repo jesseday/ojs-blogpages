@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE schema SYSTEM "../../../lib/pkp/dtd/xmlSchema.dtd">
+
+<!--
+  * plugins/generic/BlogPages/schema.xml
+  *
+  *
+  * BlogPages plugin schema in XML.
+  *
+  -->
+
+<schema version="0.2">
+    <!--
+     *
+     * TABLE blog_pages
+     *
+     -->
+    <table name="blog_pages">
+        <field name="blog_page_id" type="I8">
+            <KEY/>
+            <AUTOINCREMENT/>
+        </field>
+        <field name="path" type="C2" size="255">
+            <NOTNULL/>
+        </field>
+        <field name="journal_id" type="I8">
+            <NOTNULL/>
+            <DEFAULT VALUE="0" />
+        </field>
+        <field name="blog_content" type="XL">
+            <NOTNULL/>
+            <DEFAULT VALUE="" />
+        </field>
+        <field name="date_published" type="T">
+            <NOTNULL/>
+        </field>
+        <field name="date_updated" type="T">
+            <NOTNULL/>
+        </field>
+        <descr>Blog Pages</descr>
+    </table>
+
+    <!--
+      *
+      * TABLE blog_page_settings
+      *
+      -->
+    <table name="blog_page_settings">
+        <field name="blog_page_id" type="I8">
+            <NOTNULL/>
+        </field>
+        <field name="locale" type="C2" size="5">
+            <NOTNULL/>
+            <DEFAULT VALUE=""/>
+        </field>
+        <field name="setting_name" type="C2" size="255">
+            <NOTNULL/>
+        </field>
+        <field name="setting_value" type="XL"/>
+        <field name="setting_type" type="C2" size="6">
+            <NOTNULL/>
+            <descr>(bool|int|float|string|object)</descr>
+        </field>
+        <descr>Blog Page settings.</descr>
+        <index name="blog_page_settings_blog_page_id">
+            <col>blog_page_id</col>
+        </index>
+        <index name="blog_page_settings_pkey">
+            <col>blog_page_id</col>
+            <col>locale</col>
+            <col>setting_name</col>
+            <UNIQUE />
+        </index>
+    </table>
+</schema>
