@@ -27,10 +27,7 @@
             <NOTNULL/>
             <DEFAULT VALUE="0" />
         </field>
-        <field name="blog_content" type="XL">
-            <NOTNULL/>
-            <DEFAULT VALUE="" />
-        </field>
+        <field name="blog_content" type="XL" />
         <field name="date_published" type="T">
             <NOTNULL/>
         </field>
