@@ -5,13 +5,14 @@
 
 Todo
 ----
--[] Breakup blog_page_settings table into blog_content and blog_page_settings
--[] Update insert and update functions to remove blog_content from being saved to blog_page_settings table
--[] Support path such as blog/blog-path
--[] Blog view displaying *X* number of articles
--[] Consider needs for multilingual support?
--[] Consider needs for tagging support.
--[] Support a single cover or article image?
+
+* Breakup blog_page_settings table into blog_content and blog_page_settings
+* Update insert and update functions to remove blog_content from being saved to blog_page_settings table
+* Support path such as blog/blog-path
+* Blog view displaying *X* number of articles
+* Consider needs for multilingual support?
+* Consider needs for tagging support.
+* Support a single cover or article image?
 
 About
 -----
