@@ -62,14 +62,18 @@ class BlogPagesDAO extends DAO {
 	}
 
 	function insertBlogPage(&$blogPage) {
-		$this->update(
+		$timestamp = $_SERVER['REQUEST_TIME'];
+    $this->update(
 			'INSERT INTO blog_pages
-				(journal_id, path)
+				(journal_id, path, blog_content, date_published, date_updated)
 				VALUES
-				(?, ?)',
+				(?, ?, ?, ?, ?)',
 			array(
 				$blogPage->getJournalId(),
-				$blogPage->getPath()
+				$blogPage->getPath(),
+        $blogPage->getBlogPageContent(),
+        date('Y-m-j H:I:s', $timestamp),
+        date('Y-m-j H:I:s', $timestamp),
 			)
 		);
 
@@ -80,17 +84,20 @@ class BlogPagesDAO extends DAO {
 	}
 
 	function updateBlogPage(&$blogPage) {
-		$returner = $this->update(
+		$timestamp = $_SERVER['REQUEST_TIME'];
+    $returner = $this->update(
 			'UPDATE blog_pages
 				SET
 					journal_id = ?,
 					path = ?,
-					blog_content = ?
+					blog_content = ?,
+					date_updated = ?
 				WHERE blog_page_id = ?',
 				array(
 					$blogPage->getJournalId(),
 					$blogPage->getPath(),
           $blogPage->getBlogPageContent(),
+          date('Y-m-j H:I:s', $timestamp),
 					$blogPage->getId(),
 					)
 			);
