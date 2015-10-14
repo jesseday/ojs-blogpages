@@ -3,6 +3,16 @@
 
 **This is an experimental project and very much work in progress!  It is not ready or currently intended for use on a production site.**
 
+Todo
+----
+-[] Breakup blog_page_settings table into blog_content and blog_page_settings
+-[] Update insert and update functions to remove blog_content from being saved to blog_page_settings table
+-[] Support path such as blog/blog-path
+-[] Blog view displaying *X* number of articles
+-[] Consider needs for multilingual support?
+-[] Consider needs for tagging support.
+-[] Support a single cover or article image?
+
 About
 -----
 This plugin is intended to provide very simple blog management.  It allows for the creation of blog content pages with the assistance of an HTML editor.
